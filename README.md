@@ -56,3 +56,25 @@ Reference the `run-tests.ts` using your preferred bundler.
   </body>
 </html>
 ```
+
+## API reference
+
+```TypeScript
+import { describe, expect, it, beforeEach, afterEach, beforeAll, afterAll } from "@osmoscraft/web-testing-library";
+
+const runTestSuite = describe("hello world", () => {
+
+  it("spec name", async () => {
+    // simple assertion
+    await expect("hello").toEqual("hello");
+    
+    // simple call
+    await expect(() => throw new Error()).toThrow();
+    
+    // negation
+    await expect(true).not.toEqual(false);
+    await expect(() => {}).not.toThrow();
+  });
+
+});
+```
